@@ -42,7 +42,8 @@ public class UserLoginServlet extends HttpServlet{
 		boolean flag=userService.login(user);
 		//根据业务的返回结果做响应
 		if(flag){
-			resp.sendRedirect("success.jsp");
+			//重定向到分页+模糊
+			resp.sendRedirect("FindUserByPageServlet");
 		}else{
 			resp.sendRedirect("login.jsp");
 		}

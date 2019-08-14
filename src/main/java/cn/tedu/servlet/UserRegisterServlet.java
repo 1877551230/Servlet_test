@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import cn.tedu.entity.User;
 import cn.tedu.service.UserService;
 import cn.tedu.service.impl.UserServiceImpl;
+import cn.tedu.sysinit.CommonValue;
 
 /**
  * Servlet implementation class s
@@ -29,6 +30,7 @@ public class UserRegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding(CommonValue.encoding);
 		//1.获取注册的数据
 		String uname=request.getParameter("userName");
 		String upwd=request.getParameter("userPassword");
@@ -44,7 +46,7 @@ public class UserRegisterServlet extends HttpServlet {
 		boolean flag=userService.register(user);
 		//3.根据业务的返回结果做响应
 		if(flag){
-			
+			response.sendRedirect("login.jsp");
 		}else{
 			
 		}

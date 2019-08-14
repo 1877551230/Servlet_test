@@ -1,6 +1,5 @@
 package cn.tedu.vo;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,7 +11,7 @@ public class Page<T> {
 	
 	private int currentPage;//当前页
 	private int pageSize;//每一页多少条数据
-	private int preViousPage;//上一页
+	private int previousPage;//上一页
 	private int nextPage;//下一页
 	private int totalCount;//总记录数
 	private int totalPage;//总页数
@@ -37,12 +36,12 @@ public class Page<T> {
 		this.pageSize = pageSize;
 	}
 
-	public int getPreViousPage() {
-		return preViousPage;
+	public int getPreviousPage() {
+		return previousPage;
 	}
 
-	public void setPreViousPage(int preViousPage) {
-		this.preViousPage = preViousPage;
+	public void setPreviousPage(int previousPage) {
+		this.previousPage = previousPage;
 	}
 
 	public int getNextPage() {
@@ -85,12 +84,7 @@ public class Page<T> {
 		this.keywords = keywords;
 	}
 
-	@Override
-	public String toString() {
-		return "Page [currentPage=" + currentPage + ", pageSize=" + pageSize + ", preViousPage=" + preViousPage
-				+ ", nextPage=" + nextPage + ", totalCount=" + totalCount + ", totalPage=" + totalPage + ", data="
-				+ data + ", keywords=" + Arrays.toString(keywords) + "]";
-	}
+
 
 	
 	

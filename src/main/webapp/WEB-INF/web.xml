@@ -49,4 +49,54 @@
     <servlet-name>UserRegisterServlet</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserShowAllServlet</display-name>
+    <servlet-name>UserShowAllServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.UserShowAllServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserShowAllServlet</servlet-name>
+    <url-pattern>/UserShowAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserDeleteServlet</display-name>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.UserDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDeleteServlet</servlet-name>
+    <url-pattern>/UserDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserFindById</display-name>
+    <servlet-name>UserFindById</servlet-name>
+    <servlet-class>cn.tedu.servlet.UserFindById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserFindById</servlet-name>
+    <url-pattern>/UserFindById</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserUpdateServlet</display-name>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.UserUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindUserByPageServlet</display-name>
+    <servlet-name>FindUserByPageServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.FindUserByPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindUserByPageServlet</servlet-name>
+    <url-pattern>/FindUserByPageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
