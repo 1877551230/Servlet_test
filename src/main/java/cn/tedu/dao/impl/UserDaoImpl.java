@@ -126,6 +126,20 @@ public class UserDaoImpl implements UserDao {
 		}
 		return users;
 	}
-	
- 
+
+	@Override
+	public int findUserByName(String uname) {
+		int id=0;
+		try {
+			String sql="select id from t_user where username=?";
+			List<User> users=CommonDao.executeQuery(User.class, sql, uname);
+			if(users!=null&&users.size()==1){
+				id=users.get(0).getId();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return id;
+	}
 }

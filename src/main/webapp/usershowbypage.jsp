@@ -9,6 +9,7 @@
 </head>
 <body>
  <div style="text-align:center">
+ <a href="UserLogoutServlet">登出</a>
  	<form action="FindUserByPageServlet" method="post">
  		用户名:<input type="text" name="keyword1" value="${page.keywords[0]}"/>
  		地址:<input type="text" name="keyword2" value="${page.keywords[1]}"/>
@@ -36,7 +37,11 @@
  			<td>${user.password}</td>
  			<td>${user.age}</td>
  			<td>${user.address}</td>
- 			<td><a href="UserDeleteServlet?uid=${user.id}">删除</a></td>
+ 			<td>
+ 			<c:if test="${userName!=user.name}">
+ 			<a href="UserDeleteServlet?uid=${user.id}">删除</a>
+ 			</c:if>
+ 			</td>
  			<td><a href="UserFindById?uid=${user.id}">修改</a></td>
  		</tr>
  	</c:forEach>	

@@ -30,7 +30,7 @@ public class UserRegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding(CommonValue.encoding);
+		//request.setCharacterEncoding(CommonValue.encoding);
 		//1.获取注册的数据
 		String uname=request.getParameter("userName");
 		String upwd=request.getParameter("userPassword");

@@ -19,4 +19,6 @@ public interface UserService {
 	public boolean updateUser(User user);
 	//分页+模糊查询的业务方法
 	public Page findUserByPage(int currentPage, int pageSize, String[] keywords);
+	//根据用户名查询用户
+	public boolean findUserByName(String uname) ;
 }

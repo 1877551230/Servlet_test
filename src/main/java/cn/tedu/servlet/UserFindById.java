@@ -29,7 +29,7 @@ public class UserFindById extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding(CommonValue.encoding);
+		//request.setCharacterEncoding(CommonValue.encoding);
 		//1.获取用户的id
 		String id=request.getParameter("uid");
 		//2.根据id查询用户信息

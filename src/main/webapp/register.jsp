@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/common/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
 </head>
 <body>
  <div style="text-align:center;">
@@ -13,7 +15,10 @@
  	<table border="1px" align="center">
  		<tr>
  			<td>用户名</td>
- 			<td><input type="text" name="userName"/></td>
+ 			<td>
+ 			<input type="text" name="userName" onblur="doCheckName();"/>
+ 			<span id="uname" style="color:red;"></span>
+ 			</td>
  		</tr>
  		<tr>
  			<td>密&nbsp;&nbsp;码</td>

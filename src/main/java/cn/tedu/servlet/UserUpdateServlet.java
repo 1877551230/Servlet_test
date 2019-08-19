@@ -29,7 +29,7 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding(CommonValue.encoding);
+		//request.setCharacterEncoding(CommonValue.encoding);
 		String uid=request.getParameter("userId");
 		String uname=request.getParameter("userName");
 		String upwd=request.getParameter("userPassword");

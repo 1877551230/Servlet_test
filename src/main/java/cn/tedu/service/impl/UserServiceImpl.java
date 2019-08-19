@@ -87,4 +87,13 @@ public class UserServiceImpl implements UserService {
 		page.setData(users);
 		return page;
 	}
+	//
+	public boolean findUserByName(String uname) {
+		boolean flag=false;
+		int id=userDao.findUserByName(uname);
+		if(id>0){
+			flag=true;
+		}
+		return flag;
+	}
 }

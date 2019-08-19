@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cn.tedu.service.UserService;
 import cn.tedu.service.impl.UserServiceImpl;
@@ -55,7 +56,8 @@ public class FindUserByPageServlet extends HttpServlet {
 		//3.把查询到的分页信息绑定给request,转发给usershowbypage.jsp
 		request.setAttribute("page", page);
 		request.getRequestDispatcher("usershowbypage.jsp").forward(request, response);
-		
+		//HttpSession session=request.getSession();
+		//session.setAttribute("page", page);
 	}
 
 	/**

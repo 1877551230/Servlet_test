@@ -20,5 +20,7 @@ public interface UserDao {
 	//分页+模糊
 	public int getCount(String[] keywords);
 	public List<User> getUsersByPage(int currentPage, int pageSize, String[] keywords);
+	//查询用户名的数据库方法
+	public int findUserByName(String uname);
 	
 }
