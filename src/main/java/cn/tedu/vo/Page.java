@@ -1,22 +1,23 @@
 package cn.tedu.vo;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * vo类是程序中临时用的数据载体
- * @author PC
+ * VO类,是程序中临时用的数据的载体
+ * @author tedu
  *
  */
 public class Page<T> {
 	
 	private int currentPage;//当前页
-	private int pageSize;//每一页多少条数据
-	private int previousPage;//上一页
-	private int nextPage;//下一页
+	private int pageSize;//每页多少条数据
+	private int previousPage;//前一页
+	private int nextPage;//后一页
 	private int totalCount;//总记录数
 	private int totalPage;//总页数
 	
-	private List<T> data;//当前页的数据
+	private List<T> data;//当前页的那些数据
 	
 	private String[] keywords;//模糊的关键字
 
@@ -84,10 +85,12 @@ public class Page<T> {
 		this.keywords = keywords;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Page [currentPage=" + currentPage + ", pageSize=" + pageSize + ", previousPage=" + previousPage
+				+ ", nextPage=" + nextPage + ", totalCount=" + totalCount + ", totalPage=" + totalPage + ", data="
+				+ data + ", keywords=" + Arrays.toString(keywords) + "]";
+	}
 
 	
-	
-	
-
 }

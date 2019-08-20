@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.tedu.entity.User;
 import cn.tedu.service.impl.UserServiceImpl;
-import cn.tedu.sysinit.CommonValue;
 
 /**
  * Servlet implementation class UserFindById
@@ -29,7 +28,6 @@ public class UserFindById extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//request.setCharacterEncoding(CommonValue.encoding);
 		//1.获取用户的id
 		String id=request.getParameter("uid");
 		//2.根据id查询用户信息

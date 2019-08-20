@@ -2,23 +2,22 @@ package cn.tedu.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.tedu.service.impl.UserServiceImpl;
-
 /**
- * Servlet implementation class UserDeleteServlet
+ * Servlet implementation class TestServlet
  */
-public class UserDeleteServlet extends HttpServlet {
+public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserDeleteServlet() {
+    public TestServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,13 +26,11 @@ public class UserDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1.获取要删除的id
-		String id=request.getParameter("uid");
-		//2.调用删除用户的业务
-		boolean flag=new UserServiceImpl().deleteUser(Integer.parseInt(id));
-		//3.根据业务的返回结果做跳转响应
-		if(flag)
-		   response.sendRedirect("UserShowAllServlet");
+		ServletContext c=this.getServletContext();
+		Object obj=c.getAttribute("aa");
+		if(obj!=null){
+			System.out.println("aaaaaaaaaaaa->"+obj);
+		}
 	}
 
 	/**

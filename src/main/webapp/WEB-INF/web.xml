@@ -165,4 +165,14 @@
   <listener>
     <listener-class>cn.tedu.listener.OnLineUserListener</listener-class>
   </listener>
+  <servlet>
+    <description></description>
+    <display-name>ExportExcelServlet</display-name>
+    <servlet-name>ExportExcelServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.ExportExcelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportExcelServlet</servlet-name>
+    <url-pattern>/ExportExcelServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

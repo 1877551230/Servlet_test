@@ -1,24 +1,21 @@
 package cn.tedu.servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.tedu.service.impl.UserServiceImpl;
-
 /**
- * Servlet implementation class UserDeleteServlet
+ * Servlet implementation class ExportExcelServlet
  */
-public class UserDeleteServlet extends HttpServlet {
+public class ExportExcelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserDeleteServlet() {
+    public ExportExcelServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,13 +24,9 @@ public class UserDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1.获取要删除的id
-		String id=request.getParameter("uid");
-		//2.调用删除用户的业务
-		boolean flag=new UserServiceImpl().deleteUser(Integer.parseInt(id));
-		//3.根据业务的返回结果做跳转响应
-		if(flag)
-		   response.sendRedirect("UserShowAllServlet");
+		//1.获取数据
+		//2.调用查询所有数据的业务
+		//3.相应数据给excel表格
 	}
 
 	/**

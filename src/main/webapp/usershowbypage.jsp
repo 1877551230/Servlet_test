@@ -9,6 +9,7 @@
 </head>
 <body>
  <div style="text-align:center">
+ <a href="ExportExcelSErvlet?"></a>
  <a href="UserLogoutServlet">登出</a>
  	<form action="FindUserByPageServlet" method="post">
  		用户名:<input type="text" name="keyword1" value="${page.keywords[0]}"/>
