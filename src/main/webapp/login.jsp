@@ -67,6 +67,7 @@
  			<td colspan="2" align="center">
  			<input type="submit" value="登录"/>
  			<input type="reset" value="重置"/>
+ 			<a href="http://localhost:8080/testmavenwebproject/register.jsp">注册</a>
  			</td>
  		</tr>
  	</table>

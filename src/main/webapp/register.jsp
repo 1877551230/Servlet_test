@@ -39,6 +39,7 @@
  			<td colspan="2" align="center">
  			<input type="submit" value="注册" id="submit"/>
  			<input type="reset" value="重置"/>
+ 			<a href="http://localhost:8080/testmavenwebproject/login.jsp">登录</a>
  			</td>	
  		</tr>
  	</table>

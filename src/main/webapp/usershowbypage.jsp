@@ -108,7 +108,7 @@
  	
 	<c:if test="${page.totalPage>=7 and page.currentPage>5 and page.currentPage+2<=page.totalPage}">
 		<a href="FindUserByPageServlet?currentPage=1&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">1</a>
-		<a href="FindUserByPageServlet?currentPage=3 &keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">..</a>
+		<a href="FindUserByPageServlet?currentPage=3&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">..</a>
  		<c:forEach var="num" begin="${page.currentPage-4}" end="${page.currentPage+2}" varStatus="vs">
  			<a href="FindUserByPageServlet?currentPage=${num}&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">${num}</a>
  		</c:forEach>

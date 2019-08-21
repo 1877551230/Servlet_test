@@ -32,7 +32,7 @@ public class UserRegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//request.setCharacterEncoding(CommonValue.encoding);
-		//1.获取注册的数据
+		
 		/*String uname=request.getParameter("userName");
 		String upwd=request.getParameter("userPassword");
 		String uage=request.getParameter("age");
@@ -42,6 +42,7 @@ public class UserRegisterServlet extends HttpServlet {
 		user.setPassword(upwd);
 		user.setAddress(uaddress);
 		user.setAge(Integer.parseInt(uage));*/
+		//1.获取注册的数据
 		User user=new UploadUtil().uploadFile(request, response);
 		//2.注册的业务
 		UserService userService=new UserServiceImpl();
