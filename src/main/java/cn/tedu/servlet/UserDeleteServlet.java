@@ -33,7 +33,7 @@ public class UserDeleteServlet extends HttpServlet {
 		boolean flag=new UserServiceImpl().deleteUser(Integer.parseInt(id));
 		//3.根据业务的返回结果做跳转响应
 		if(flag)
-		   response.sendRedirect("UserShowAllServlet");
+			response.sendRedirect("FindUserByPageServlet");
 	}
 
 	/**

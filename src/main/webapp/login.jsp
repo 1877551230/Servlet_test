@@ -39,16 +39,16 @@
  	<table border="1px" align="center">
  		<tr>
  			<td>用户名</td>
- 			<td><input type="text" name="userName"/></td>
+ 			<td><input required="required" type="text" name="userName"/></td>
  		</tr>
  		<tr>
  			<td>密&nbsp;&nbsp;码</td>
- 			<td><input type="password" name="userPassword"/></td>
+ 			<td><input required="required" type="password" name="userPassword"/></td>
  		</tr>
  			<tr>
  			<td>验证码</td>
  			<td>
- 			<input type="text" name="validateCode" size=5/>
+ 			<input required="required" type="text" name="validateCode" size=5/>
  			<img src="CodeServlet" onclick="this.src='CodeServlet?'+Math.random();" title="点击更换" style="cursor:pointer;" >
  			<span style="color:red;">${requestScope.messagecode}</span>
  			</td>

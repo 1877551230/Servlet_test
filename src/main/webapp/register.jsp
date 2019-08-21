@@ -16,17 +16,17 @@
  		<tr>
  			<td>用户名</td>
  			<td>
- 			<input type="text" name="userName" onblur="doCheckName();"/>
+ 			<input required="required" type="text" name="userName" onblur="doCheckName();"/>
  			<span id="uname" style="color:red;"></span>
  			</td>
  		</tr>
  		<tr>
  			<td>密&nbsp;&nbsp;码</td>
- 			<td><input type="password" name="userPassword"/></td>
+ 			<td><input required="required" type="password" name="userPassword"/></td>
  		</tr>
  		<tr>
  			<td>年龄</td>
- 			<td><input type="text" name="age"/></td>
+ 			<td><input type="text" required="required" name="age"/></td>
  		<tr>
  			<td>地址</td>
  			<td><input type="text" name="address"/></td>
@@ -37,7 +37,7 @@
  		</tr>
  		<tr>
  			<td colspan="2" align="center">
- 			<input type="submit" value="注册"/>
+ 			<input type="submit" value="注册" id="submit"/>
  			<input type="reset" value="重置"/>
  			</td>	
  		</tr>
