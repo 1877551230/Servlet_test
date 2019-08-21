@@ -11,7 +11,7 @@
 <body>
  <div style="text-align:center;">
  	<div style="font-size:30px;font-weight:bold;">用户注册</div>
- 	<form action="register" method="post">
+ 	<form action="register" method="POST" enctype="multipart/form-data">
  	<table border="1px" align="center">
  		<tr>
  			<td>用户名</td>
@@ -27,17 +27,19 @@
  		<tr>
  			<td>年龄</td>
  			<td><input type="text" name="age"/></td>
- 		</tr>
  		<tr>
  			<td>地址</td>
  			<td><input type="text" name="address"/></td>
  		</tr>
  		<tr>
+ 			<td>头像</td>
+ 			<td><input type="file" name="userheadfile"></td>
+ 		</tr>
+ 		<tr>
  			<td colspan="2" align="center">
  			<input type="submit" value="注册"/>
  			<input type="reset" value="重置"/>
- 			</td>
- 			
+ 			</td>	
  		</tr>
  	</table>
  	</form>

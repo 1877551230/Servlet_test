@@ -9,7 +9,7 @@
 </head>
 <body>
  <div style="text-align:center">
- <a href="ExportExcelSErvlet?"></a>
+ <a href="ExportExcelServlet">全部导出</a><br>
  <a href="UserLogoutServlet">登出</a>
  	<form action="FindUserByPageServlet" method="post">
  		用户名:<input type="text" name="keyword1" value="${page.keywords[0]}"/>
@@ -26,6 +26,7 @@
  			<th>密码</th>
  			<th>年龄</th>
  			<th>地址</th>
+ 			<th>头像</th>
  			<th>删除</th>
  			<th>修改</th>
  		</tr>
@@ -38,6 +39,10 @@
  			<td>${user.password}</td>
  			<td>${user.age}</td>
  			<td>${user.address}</td>
+ 			<td>
+ 			<img src="images/${user.headimage}" width="50px" height="50px"/>
+			<a href="DownloadServlet?fileName=${user.headimage}">下载</a> 				
+ 			</td>
  			<td>
  			<c:if test="${userName!=user.name}">
  			<a href="UserDeleteServlet?uid=${user.id}">删除</a>
@@ -100,13 +105,18 @@
  		</c:forEach>
  	</c:if>	
  	<!-- 当当前页大于5且后面还能再加两个,向前显示4个,向后显示2个 -->
+ 	
 	<c:if test="${page.totalPage>=7 and page.currentPage>5 and page.currentPage+2<=page.totalPage}">
+		<a href="FindUserByPageServlet?currentPage=1&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">1</a>
+		<a href="FindUserByPageServlet?currentPage=3 &keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">..</a>
  		<c:forEach var="num" begin="${page.currentPage-4}" end="${page.currentPage+2}" varStatus="vs">
  			<a href="FindUserByPageServlet?currentPage=${num}&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">${num}</a>
  		</c:forEach>
  	</c:if>	
  	<!-- 当当前页大于5且后面不能再加两个,向前显示少于7页的页数,向后显示到总页数 -->
  	<c:if test="${page.totalPage>=7 and page.currentPage>5 and page.currentPage+2>page.totalPage}">
+ 		<a href="FindUserByPageServlet?currentPage=1&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">1</a>
+ 		<a href="FindUserByPageServlet?currentPage=3&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">..</a>
  		<c:forEach var="num" begin="${page.currentPage-6+page.totalPage-page.currentPage}" end="${page.totalPage}" varStatus="vs">
  			<a href="FindUserByPageServlet?currentPage=${num}&keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">${num}</a>
  		</c:forEach>

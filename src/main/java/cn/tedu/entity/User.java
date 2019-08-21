@@ -6,6 +6,7 @@ public class User {
 	private String password;
 	private int age;
 	private String address;
+	private String headimage;
 	public int getId() {
 		return id;
 	}
@@ -36,6 +37,11 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	
+	public void setHeadimage(String headimage) {
+		this.headimage=headimage;
+		
+	}
+	public String getHeadimage() {
+		return headimage;
+	}
 }

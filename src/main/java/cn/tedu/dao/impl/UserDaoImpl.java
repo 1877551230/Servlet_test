@@ -31,9 +31,9 @@ public class UserDaoImpl implements UserDao {
 	public int register(User user) {
 		int rowAffect=0;
 		try {
-			String sql = "insert into t_user (username,userpassword,age,address) values(?,?,?,?)";
+			String sql = "insert into t_user (username,userpassword,age,address,headimage) values(?,?,?,?,?)";
 			rowAffect = CommonDao.executeUpdate(sql,
-					new Object[] { user.getName(), user.getPassword(), user.getAge(), user.getAddress() });
+					new Object[] { user.getName(), user.getPassword(), user.getAge(), user.getAddress(),user.getHeadimage() });
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -44,7 +44,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> findAllUsers() {
 		List<User> users=null;
 		try {
-			String sql = "select id,username name,userpassword password,age,address from t_user";
+			String sql = "select id,username name,userpassword password,age,address,headimage from t_user";
 			users = CommonDao.executeQuery(User.class, sql);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -117,7 +117,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> getUsersByPage(int currentPage, int pageSize, String[] keywords) {
 		List<User> users=null;
 		try {
-			String sql="select id,username name,userpassword password,age,address from t_user where username like ? and address like ? limit ?,?";
+			String sql="select id,username name,userpassword password,age,address,headimage from t_user where username like ? and address like ? limit ?,?";
 			Object[] params=new Object[]{"%"+keywords[0]+"%","%"+keywords[1]+"%",(currentPage-1)*pageSize,pageSize};
 			users=CommonDao.executeQuery(User.class, sql, params);
 		} catch (Exception e) {

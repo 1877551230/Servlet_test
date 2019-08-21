@@ -1,5 +1,6 @@
 package cn.tedu.servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import cn.tedu.entity.User;
 import cn.tedu.service.UserService;
 import cn.tedu.service.impl.UserServiceImpl;
-import cn.tedu.sysinit.CommonValue;
+import cn.tedu.util.UploadUtil;
 
 /**
  * Servlet implementation class s
@@ -32,7 +33,7 @@ public class UserRegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//request.setCharacterEncoding(CommonValue.encoding);
 		//1.获取注册的数据
-		String uname=request.getParameter("userName");
+		/*String uname=request.getParameter("userName");
 		String upwd=request.getParameter("userPassword");
 		String uage=request.getParameter("age");
 		String uaddress=request.getParameter("address");
@@ -40,7 +41,8 @@ public class UserRegisterServlet extends HttpServlet {
 		user.setName(uname);
 		user.setPassword(upwd);
 		user.setAddress(uaddress);
-		user.setAge(Integer.parseInt(uage));
+		user.setAge(Integer.parseInt(uage));*/
+		User user=new UploadUtil().uploadFile(request, response);
 		//2.注册的业务
 		UserService userService=new UserServiceImpl();
 		boolean flag=userService.register(user);
@@ -48,7 +50,13 @@ public class UserRegisterServlet extends HttpServlet {
 		if(flag){
 			response.sendRedirect("login.jsp");
 		}else{
-			
+			//删除上传的文件
+			String realPath=request.getServletContext().getRealPath("/images");
+			File file = new File(realPath,user.getHeadimage());
+			if(file.exists()){
+				file.delete();
+			}
+			response.sendRedirect("register.jsp");
 		}
 	}
 

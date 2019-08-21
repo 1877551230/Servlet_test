@@ -6,6 +6,7 @@ import cn.tedu.dao.UserDao;
 import cn.tedu.dao.impl.UserDaoImpl;
 import cn.tedu.entity.User;
 import cn.tedu.service.UserService;
+import cn.tedu.util.ExportUtil;
 import cn.tedu.vo.Page;
 import cn.tedu.vo.Result;
 
@@ -97,6 +98,16 @@ public class UserServiceImpl implements UserService {
 			flag=true;
 		}
 		return flag;
+	}
+	@Override
+	public byte[] exportUser() {
+		byte[] data=null;
+		//获取所有的用户数据
+		List<User> users=userDao.findAllUsers();
+		if(users!=null && users.size()>0){
+			data=ExportUtil.write2Excel(users);
+		}
+		return data;
 	}
 
 }
