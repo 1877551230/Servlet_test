@@ -144,7 +144,7 @@
     <filter-class>cn.tedu.filter.CheckLoginFilter</filter-class>
     <init-param>
       <param-name>checkSessionKey</param-name>
-      <param-value>userName</param-value>
+      <param-value></param-value>
     </init-param>
     <init-param>
       <param-name>redirectURL</param-name>
@@ -152,7 +152,7 @@
     </init-param>
     <init-param>
       <param-name>notCheckURL</param-name>
-      <param-value>/login.jsp;/register.jsp;/login;/register;/register.js;/CodeServlet;/CheckNameServlet</param-value>
+      <param-value>/login.jsp;/register.jsp;/login;/register;/register.js;/CodeServlet;/CheckNameServlet;/js/common/jquery-3.2.1.min.js</param-value>
     </init-param>
   </filter>
   <filter-mapping>
