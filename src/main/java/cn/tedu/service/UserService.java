@@ -22,7 +22,10 @@ public interface UserService {
 	public Page findUserByPage(int currentPage, int pageSize, String[] keywords);
 	//根据用户名查询用户名是否存在   
 	public boolean findUserByName(String uname);
-	//导出excel表格
-	public byte[] exportUser();
+	//导出当前页用户到excel表格
+	public byte[] exportUserByPage(int currentPage, int pageSize, String[] keywords);
+	//导出查询的用户
+	public byte[] exportUser(String[] keywords);
+
 	
 }

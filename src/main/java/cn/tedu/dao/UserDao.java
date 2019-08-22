@@ -22,5 +22,7 @@ public interface UserDao {
 	public List<User> getUsersByPage(int currentPage, int pageSize, String[] keywords);
 	//查询用户名的数据库方法
 	public int findUserByName(String uname);
+	//查找所有符合条件的用户
+	public List<User> getUsersByWords(String[] keywords);
 	
 }

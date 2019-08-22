@@ -8,7 +8,6 @@ import cn.tedu.entity.User;
 import cn.tedu.service.UserService;
 import cn.tedu.util.ExportUtil;
 import cn.tedu.vo.Page;
-import cn.tedu.vo.Result;
 
 public class UserServiceImpl implements UserService {
 	private UserDao userDao=new  UserDaoImpl();
@@ -99,12 +98,23 @@ public class UserServiceImpl implements UserService {
 		}
 		return flag;
 	}
+	//当前页用户数据
 	@Override
-	public byte[] exportUser() {
+	public byte[] exportUserByPage(int currentPage, int pageSize, String[] keywords) {
 		byte[] data=null;
-		//获取所有的用户数据
-		List<User> users=userDao.findAllUsers();
+		List<User> users=userDao.getUsersByPage(currentPage, pageSize, keywords);
 		if(users!=null && users.size()>0){
+			data=ExportUtil.write2Excel(users);
+		}
+		return data;
+	}
+	//导出符合条件的用户
+	@Override
+	public byte[] exportUser(String[] keywords) {
+		byte[] data=null;
+		//获取查询到的用户数据
+		List<User> users=userDao.getUsersByWords(keywords);
+		if(users!=null&&users.size()>0){
 			data=ExportUtil.write2Excel(users);
 		}
 		return data;

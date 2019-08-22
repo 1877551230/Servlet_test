@@ -142,4 +142,18 @@ public class UserDaoImpl implements UserDao {
 		}
 		return id;
 	}
+
+	@Override
+	public List<User> getUsersByWords(String[] keywords) {
+		List<User> users=null;
+		try {
+			String sql="select id,username name,userpassword password,age,address,headimage from t_user where username like ? and address like ?";
+			Object[] params=new Object[]{"%"+keywords[0]+"%","%"+keywords[1]+"%"};
+			users=CommonDao.executeQuery(User.class, sql, params);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return users;
+	}
 }

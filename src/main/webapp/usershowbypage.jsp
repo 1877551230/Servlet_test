@@ -9,7 +9,8 @@
 </head>
 <body>
  <div style="text-align:center">
- <a href="ExportExcelServlet">全部导出</a><br>
+ <a href="ExportExcelByWordsServlet?keyword1=${page.keywords[0]}&keyword2=${page.keywords[1]}">导出查询的用户</a><br>
+ <a href="ExportExcelByPageServlet">导出当前页用户</a><br>
  <a href="UserLogoutServlet">登出</a>
  	<form action="FindUserByPageServlet" method="post">
  		用户名:<input type="text" name="keyword1" value="${page.keywords[0]}"/>

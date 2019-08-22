@@ -167,13 +167,13 @@
   </listener>
   <servlet>
     <description></description>
-    <display-name>ExportExcelServlet</display-name>
-    <servlet-name>ExportExcelServlet</servlet-name>
-    <servlet-class>cn.tedu.servlet.ExportExcelServlet</servlet-class>
+    <display-name>ExportExcelByWordsServlet</display-name>
+    <servlet-name>ExportExcelByWordsServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.ExportExcelByWordsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ExportExcelServlet</servlet-name>
-    <url-pattern>/ExportExcelServlet</url-pattern>
+    <servlet-name>ExportExcelByWordsServlet</servlet-name>
+    <url-pattern>/ExportExcelByWordsServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -184,5 +184,15 @@
   <servlet-mapping>
     <servlet-name>DownloadServlet</servlet-name>
     <url-pattern>/DownloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExportExcelByPageServlet</display-name>
+    <servlet-name>ExportExcelByPageServlet</servlet-name>
+    <servlet-class>cn.tedu.servlet.ExportExcelByPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportExcelByPageServlet</servlet-name>
+    <url-pattern>/ExportExcelByPageServlet</url-pattern>
   </servlet-mapping>
 </web-app>

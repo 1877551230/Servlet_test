@@ -61,7 +61,9 @@ function handStateChange(){
 			//根据响应回来的文本创建文本节点对象
 			var txt_node=document.createTextNode(responseText);
 			var submit_ele=document.getElementById("submit");
-			if(responseText=='{"message":"用户名被占用","status":0}'){
+			//{"message":"用户名可用","status":1} json字符串-->json对象
+			var JsonObj=JSON.parse(responseText);
+			if(JsonObj.status=="0"){
 				submit_ele.setAttribute("disabled","disabled");
 			}else{
 				submit_ele.removeAttribute("disabled");
