@@ -8,7 +8,7 @@
   <dependency>
 	  <groupId>com.alibaba</groupId>
 	  <artifactId>fastjson</artifactId>
-	  <version>1.2.7</version>
+	  <version>1.2.83</version>
 	</dependency>
 		<!-- 此处放置要依赖的jar包 -->
 		<!-- 依赖junit -->
